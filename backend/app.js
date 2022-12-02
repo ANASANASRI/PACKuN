@@ -3,20 +3,20 @@ const mongoose = require('mongoose');
 const app=express();
 
 const loggingMiddelwares=require("./middlewares/loggingMiddelwares")
-const route=require("./routes/clientRoutes")
+const route=require("./routes/PRoutes")
 app.use(express.urlencoded({extended:true}));
 app.use(loggingMiddelwares.loggingParams)
 app.use(loggingMiddelwares.loggingUrls) 
 
 require('dotenv').config()
 
-const clients = require("./models/clients.js");
+const clients = require("./models/packages.js");
 
 mongoose.connect(process.env.dbURL)
         .then(result=>console.log('connect'))
         .catch(err => console.log(err));
 
-app.use("/clients",route)
+app.use("/packages",route)
 
 app.get("/",(req,res)=>{
     console.log("Home Page")
