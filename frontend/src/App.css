@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.text{
+  text-align: center;
+  color: blue;
+}
+
+.containernav{
+  display: flex;
+  justify-content: center;
+}
+
+.itemsnav{
+  margin: 0 4% 0 4%;
+}
